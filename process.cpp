@@ -50,8 +50,7 @@ void process::SuspendById(DWORD processId)
     {
         if (threadEntry.th32OwnerProcessID == processId)
         {
-            HANDLE Handle = OpenThread(THREAD_ALL_ACCESS, FALSE,
-                threadEntry.th32ThreadID);
+            HANDLE Handle = OpenThread(THREAD_ALL_ACCESS, FALSE, threadEntry.th32ThreadID);
 
             SuspendThread(Handle);
             CloseHandle(Handle);
@@ -73,8 +72,7 @@ void process::ResumeById(DWORD processId)
     {
         if (threadEntry.th32OwnerProcessID == processId)
         {
-            HANDLE Handle = OpenThread(THREAD_ALL_ACCESS, FALSE,
-                threadEntry.th32ThreadID);
+            HANDLE Handle = OpenThread(THREAD_ALL_ACCESS, FALSE, threadEntry.th32ThreadID);
 
             ResumeThread(Handle);
             CloseHandle(Handle);
