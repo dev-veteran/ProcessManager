@@ -10,16 +10,16 @@ int main()
 {
     process Process;
 
-	while(true)
+	while (true)
 	{
-        SetConsoleTitleA("Debug Console");
-        DWORD processId = Process.FindProcessId(TargetProcess);
+        	SetConsoleTitleA("Debug Console");
+        	DWORD processId = Process.FindProcessId(TargetProcess);
 
-        if (processId)
-        {
-            std::cout << "Catched PID: " << processId << std::endl;
-            Process.TerminateById(processId);
-        }
+        	if (processId)
+        	{
+            		std::cout << "Catched PID: " << processId << std::endl;
+            		Process.TerminateById(processId);
+        	}
 		Sleep(50);
 	}
 }
